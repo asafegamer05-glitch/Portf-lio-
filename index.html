@@ -83,12 +83,22 @@
             position: relative;
             overflow: hidden;
             animation: pulse-avatar 4s infinite alternate;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--dark-light), #1a1a2e);
         }
         
         .discord-avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+        
+        .avatar-placeholder {
+            font-size: 4rem;
+            color: var(--primary);
+            text-shadow: 0 0 15px var(--primary);
         }
         
         .profile-info h1 {
@@ -152,6 +162,32 @@
         .social-icon:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Instruções para adicionar foto */
+        .photo-instructions {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            border-left: 4px solid var(--primary);
+            max-width: 600px;
+        }
+        
+        .photo-instructions h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .photo-instructions code {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: var(--text-secondary);
+            font-family: monospace;
+            display: block;
+            margin: 10px 0;
+            word-break: break-all;
         }
         
         /* Seções gerais */
@@ -391,7 +427,11 @@
         <div class="container">
             <div class="profile-container">
                 <div class="discord-avatar floating">
-                    <img src="https://cdn.discordapp.com/avatars/1257311678891163722/a_cb5e7fffa3c5c9653d9b2d5e8a5b4e0a.webp?size=256" alt="Asaf - Avatar Discord">
+                    <!-- Substitua a linha abaixo pelo link da sua foto do Discord -->
+                    <img src="https://i.pinimg.com/736x/07/57/a5/0757a5515d420241496edfac66f9ea2a.jpg" alt="Asaf - Avatar Discord"> -->
+                    <div class="avatar-placeholder">
+                        <i class="fas fa-user-astronaut"></i>
+                    </div>
                 </div>
                 <div class="profile-info">
                     <h1>Asaf</h1>
@@ -411,6 +451,19 @@
                             <i class="fab fa-instagram"></i>
                             <span>@asafgamery</span>
                         </a>
+                    </div>
+                    
+                    <!-- Instruções para adicionar a foto -->
+                    <div class="photo-instructions">
+                        <h4>Como adicionar sua foto do Discord:</h4>
+                        <p>Para colocar sua foto real do Discord:</p>
+                        <ol>
+                            <li>Abra o Discord e clique com o botão direito no seu avatar</li>
+                            <li>Selecione "Copiar Link da Imagem"</li>
+                            <li>Substitua no código HTML a linha comentada com:</li>
+                            <code>&lt;img src="SEU_LINK_AQUI" alt="Asaf - Avatar Discord"&gt;</code>
+                            <li>Remova as tags de comentário (<!-- e -->) ao redor da tag img</li>
+                        </ol>
                     </div>
                 </div>
             </div>
@@ -637,6 +690,18 @@
             
             // Iniciar efeito de digitação após um breve delay
             setTimeout(typeWriter, 500);
+            
+            // Alternar entre placeholder e imagem real quando disponível
+            const avatarContainer = document.querySelector('.discord-avatar');
+            const placeholder = document.querySelector('.avatar-placeholder');
+            
+            // Se você quiser testar com uma imagem de exemplo, descomente as linhas abaixo:
+            /*
+            setTimeout(() => {
+                placeholder.style.display = 'none';
+                avatarContainer.innerHTML = '<img src="https://cdn.discordapp.com/attachments/1000000000000000000/1000000000000000000/avatar.png" alt="Asaf - Avatar Discord">';
+            }, 3000);
+            */
         });
         
         // Efeito de rolagem suave para as seções
