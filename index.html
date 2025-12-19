@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Dev | Asaf - Bots Discord & Jogos</title>
+    <title>Portfólio Dev | Asaf - Luminexo Studios</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +16,7 @@
             --dark-light: #151525;
             --text: #f0f0f0;
             --text-secondary: #b0b0ff;
+            --studio-color: #8a2be2; /* Cor para Luminexo Studios */
         }
         
         * {
@@ -73,8 +74,8 @@
         }
         
         .discord-avatar {
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             border: 5px solid var(--primary);
             box-shadow: 
@@ -83,22 +84,12 @@
             position: relative;
             overflow: hidden;
             animation: pulse-avatar 4s infinite alternate;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--dark-light), #1a1a2e);
         }
         
         .discord-avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-        
-        .avatar-placeholder {
-            font-size: 4rem;
-            color: var(--primary);
-            text-shadow: 0 0 15px var(--primary);
         }
         
         .profile-info h1 {
@@ -109,6 +100,18 @@
             background-clip: text;
             color: transparent;
             text-shadow: 0 0 20px rgba(0, 238, 255, 0.5);
+        }
+        
+        .luminexo-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--studio-color), #9d4edd);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border: 2px solid rgba(138, 43, 226, 0.3);
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
         }
         
         .profile-info .tagline {
@@ -159,35 +162,13 @@
             background: linear-gradient(45deg, #405DE6, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #FFDC80);
         }
         
+        .social-icon.roblox {
+            background-color: #e3242b;
+        }
+        
         .social-icon:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* Instruções para adicionar foto */
-        .photo-instructions {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            padding: 15px;
-            margin-top: 20px;
-            border-left: 4px solid var(--primary);
-            max-width: 600px;
-        }
-        
-        .photo-instructions h4 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-        
-        .photo-instructions code {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 5px 10px;
-            border-radius: 5px;
-            color: var(--text-secondary);
-            font-family: monospace;
-            display: block;
-            margin: 10px 0;
-            word-break: break-all;
         }
         
         /* Seções gerais */
@@ -268,6 +249,38 @@
             color: var(--text);
         }
         
+        /* Seção Luminexo Studios */
+        .studio-section {
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(21, 21, 37, 0.9) 100%);
+            border-top: 2px solid var(--studio-color);
+            border-bottom: 2px solid var(--studio-color);
+        }
+        
+        .studio-card {
+            background: rgba(138, 43, 226, 0.1);
+            border: 2px solid var(--studio-color);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 0 40px rgba(138, 43, 226, 0.3);
+        }
+        
+        .studio-logo {
+            font-size: 3rem;
+            color: var(--studio-color);
+            margin-bottom: 20px;
+        }
+        
+        .studio-title {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, var(--studio-color), #9d4edd);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+        }
+        
         /* Projetos */
         .projects-container {
             display: grid;
@@ -319,6 +332,12 @@
             padding: 5px 15px;
             border-radius: 20px;
             font-size: 0.8rem;
+        }
+        
+        .roblox-tag {
+            background: rgba(227, 36, 43, 0.2);
+            color: #e3242b;
+            border: 1px solid rgba(227, 36, 43, 0.4);
         }
         
         /* Footer */
@@ -427,15 +446,17 @@
         <div class="container">
             <div class="profile-container">
                 <div class="discord-avatar floating">
-                    <!-- Substitua a linha abaixo pelo link da sua foto do Discord -->
-                    <img src="https://i.pinimg.com/736x/07/57/a5/0757a5515d420241496edfac66f9ea2a.jpg" alt="Asaf - Avatar Discord"> -->
-                    <div class="avatar-placeholder">
-                        <i class="fas fa-user-astronaut"></i>
-                    </div>
+                    <!-- COLE AQUI O LINK DA SUA FOTO DO PINTEREST -->
+                    <img src="https://i.pinimg.com/736x/07/57/a5/0757a5515d420241496edfac66f9ea2a.jpg" 
+                         alt="Asaf - Avatar Discord" 
+                         onerror="this.onerror=null; this.src='https://i.imgur.com/placeholder.jpg'; this.alt='Imagem não carregada';">
                 </div>
                 <div class="profile-info">
                     <h1>Asaf</h1>
-                    <p class="tagline">Desenvolvedor de Bots Discord & Jogos • Editor de Vídeo</p>
+                    <div class="luminexo-badge">
+                        <i class="fas fa-crown"></i> Fundador & CEO - Luminexo Studios
+                    </div>
+                    <p class="tagline">Desenvolvedor de Bots Discord & Jogos • Editor de Vídeo • Roblox Developer</p>
                     
                     <div class="discord-id">
                         <i class="fab fa-discord"></i>
@@ -451,19 +472,10 @@
                             <i class="fab fa-instagram"></i>
                             <span>@asafgamery</span>
                         </a>
-                    </div>
-                    
-                    <!-- Instruções para adicionar a foto -->
-                    <div class="photo-instructions">
-                        <h4>Como adicionar sua foto do Discord:</h4>
-                        <p>Para colocar sua foto real do Discord:</p>
-                        <ol>
-                            <li>Abra o Discord e clique com o botão direito no seu avatar</li>
-                            <li>Selecione "Copiar Link da Imagem"</li>
-                            <li>Substitua no código HTML a linha comentada com:</li>
-                            <code>&lt;img src="SEU_LINK_AQUI" alt="Asaf - Avatar Discord"&gt;</code>
-                            <li>Remova as tags de comentário (<!-- e -->) ao redor da tag img</li>
-                        </ol>
+                        <a href="https://www.roblox.com/users/2352576473/profile" target="_blank" class="social-icon roblox">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Roblox Profile</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -475,8 +487,35 @@
         <div class="container">
             <h2 class="section-title">Sobre Mim</h2>
             <div class="skill-card" style="max-width: 800px; margin: 0 auto;">
-                <p>Sou um desenvolvedor especializado em criar bots para Discord e desenvolver jogos, utilizando diversas tecnologias como aoi.js, discord.js, HTML, Python, JavaScript, Lua e outras. Também atuo como editor de vídeo, combinando habilidades técnicas com criatividade para produzir conteúdo dinâmico e envolvente.</p>
-                <p>Minha paixão é criar experiências interativas e funcionais, seja através de bots automatizados para comunidades ou jogos imersivos. Estou constantemente aprendendo novas tecnologias e aprimorando minhas habilidades para enfrentar desafios complexos.</p>
+                <p>Sou um desenvolvedor especializado em criar bots para Discord e desenvolver jogos, com experiência em Roblox, utilizando diversas tecnologias como aoi.js, discord.js, HTML, Python, JavaScript, Lua e outras. Também atuo como editor de vídeo, combinando habilidades técnicas com criatividade para produzir conteúdo dinâmico e envolvente.</p>
+                <p>Como fundador e CEO da <strong>Luminexo Studios</strong>, lidero uma equipe dedicada à criação de experiências de jogos únicas e inovadoras. Minha paixão é criar experiências interativas e funcionais, seja através de bots automatizados para comunidades ou jogos imersivos para diversas plataformas.</p>
+                <p>Estou constantemente aprendendo novas tecnologias e aprimorando minhas habilidades para enfrentar desafios complexos no desenvolvimento de jogos e sistemas automatizados.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Luminexo Studios -->
+    <section class="studio-section">
+        <div class="container">
+            <h2 class="section-title">Luminexo Studios</h2>
+            <div class="studio-card">
+                <div class="studio-logo">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <h2 class="studio-title">Luminexo Studios</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">
+                    <strong>Desenvolvedora de Jogos - Fundada e Liderada por Asaf</strong>
+                </p>
+                <p>Estúdio de desenvolvimento focado na criação de experiências de jogo inovadoras, combinando mecânicas criativas com tecnologias modernas. Especializados em desenvolvimento para Roblox e multiplataformas.</p>
+                <div style="margin-top: 30px;">
+                    <div class="project-tags" style="justify-content: center;">
+                        <span class="project-tag">Roblox Development</span>
+                        <span class="project-tag">Game Design</span>
+                        <span class="project-tag">Lua Scripting</span>
+                        <span class="project-tag">3D Modeling</span>
+                        <span class="project-tag">Multiplayer Games</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -501,33 +540,33 @@
                     </div>
                 </div>
                 
+                <!-- Desenvolvimento Roblox -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Roblox Development</h3>
+                    <p>Desenvolvimento de jogos completos no Roblox com Lua, criação de sistemas complexos, GUIs, economia e mecânicas de jogo inovadoras.</p>
+                    <div class="project-tags">
+                        <span class="project-tag roblox-tag">Lua</span>
+                        <span class="project-tag roblox-tag">Roblox Studio</span>
+                        <span class="project-tag roblox-tag">Game Design</span>
+                        <span class="project-tag roblox-tag">Multiplayer</span>
+                    </div>
+                </div>
+                
                 <!-- Desenvolvimento de Jogos -->
                 <div class="skill-card">
                     <div class="skill-icon">
                         <i class="fas fa-gamepad"></i>
                     </div>
                     <h3>Desenvolvimento de Jogos</h3>
-                    <p>Criação de jogos usando múltiplas tecnologias, desde scripts Lua para plataformas como Roblox até jogos com Python e JavaScript.</p>
+                    <p>Criação de jogos usando múltiplas tecnologias, desde scripts Lua para Roblox até jogos com Python, JavaScript e engines modernas.</p>
                     <div class="project-tags">
                         <span class="project-tag">Lua</span>
                         <span class="project-tag">Python</span>
                         <span class="project-tag">JavaScript</span>
-                        <span class="project-tag">Game Design</span>
-                    </div>
-                </div>
-                
-                <!-- Web Development -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Web Development</h3>
-                    <p>Desenvolvimento de aplicações web modernas com HTML, CSS, JavaScript e integração com APIs.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">HTML/CSS</span>
-                        <span class="project-tag">JavaScript</span>
-                        <span class="project-tag">APIs</span>
-                        <span class="project-tag">Frontend</span>
+                        <span class="project-tag">Game Engines</span>
                     </div>
                 </div>
                 
@@ -554,7 +593,23 @@
         <div class="container">
             <h2 class="section-title">Projetos Destacados</h2>
             <div class="projects-container">
-                <!-- Projeto 1 -->
+                <!-- Projeto 1 - Roblox -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Jogo Roblox - untitled rpg game</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Jogo de aventura e exploração no Roblox desenvolvido pela Luminexo Studios com sistema de progressão, missões e customização de personagens.</p>
+                        <div class="project-tags">
+                            <span class="project-tag roblox-tag">Roblox</span>
+                            <span class="project-tag roblox-tag">Lua</span>
+                            <span class="project-tag">Game Design</span>
+                            <span class="project-tag">Multiplayer</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 2 - Bot Discord -->
                 <div class="project-card">
                     <div class="project-header">
                         <h3>Bot Discord Multifuncional</h3>
@@ -570,23 +625,7 @@
                     </div>
                 </div>
                 
-                <!-- Projeto 2 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Jogo em Lua - Plataforma</h3>
-                    </div>
-                    <div class="project-body">
-                        <p>Jogo de plataforma desenvolvido em Lua com sistema de física personalizado, inimigos inteligentes e múltiplas fases.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Lua</span>
-                            <span class="project-tag">Love2D</span>
-                            <span class="project-tag">Game Design</span>
-                            <span class="project-tag">Physics Engine</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Projeto 3 -->
+                <!-- Projeto 3 - Sistema Web -->
                 <div class="project-card">
                     <div class="project-header">
                         <h3>Sistema Web para Comunidades</h3>
@@ -602,7 +641,7 @@
                     </div>
                 </div>
                 
-                <!-- Projeto 4 -->
+                <!-- Projeto 4 - Pacote de Edição -->
                 <div class="project-card">
                     <div class="project-header">
                         <h3>Pacote de Edição para Streamers</h3>
@@ -626,7 +665,7 @@
         <div class="container">
             <div class="footer-content">
                 <h3>Vamos trabalhar juntos?</h3>
-                <p>Entre em contato para discutir seu projeto de bot Discord, jogo ou edição de vídeo!</p>
+                <p>Entre em contato para discutir seu projeto de bot Discord, jogo Roblox ou edição de vídeo!</p>
                 <div class="social-links" style="justify-content: center; margin: 30px 0;">
                     <a href="https://discord.com/users/1257311678891163722" target="_blank" class="social-icon discord">
                         <i class="fab fa-discord"></i>
@@ -637,7 +676,11 @@
                         <span>Instagram</span>
                     </a>
                 </div>
-                <p style="margin-top: 30px; color: var(--text-secondary);">© 2023 Asaf - Desenvolvedor & Editor de Vídeo</p>
+                <div style="margin: 20px 0; padding: 15px; background: rgba(138, 43, 226, 0.1); border-radius: 10px;">
+                    <h4 style="color: var(--studio-color); margin-bottom: 10px;">Luminexo Studios</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Desenvolvimento de Jogos & Soluções Criativas</p>
+                </div>
+                <p style="margin-top: 30px; color: var(--text-secondary);">© 2023 Asaf - Fundador da Luminexo Studios</p>
             </div>
         </div>
     </footer>
@@ -662,7 +705,7 @@
                 particle.style.top = `${Math.random() * 100}%`;
                 
                 // Cor aleatória
-                const colors = ['#00eeff', '#ff00cc', '#ffffff'];
+                const colors = ['#00eeff', '#ff00cc', '#8a2be2', '#ffffff'];
                 const color = colors[Math.floor(Math.random() * colors.length)];
                 particle.style.backgroundColor = color;
                 
@@ -690,18 +733,6 @@
             
             // Iniciar efeito de digitação após um breve delay
             setTimeout(typeWriter, 500);
-            
-            // Alternar entre placeholder e imagem real quando disponível
-            const avatarContainer = document.querySelector('.discord-avatar');
-            const placeholder = document.querySelector('.avatar-placeholder');
-            
-            // Se você quiser testar com uma imagem de exemplo, descomente as linhas abaixo:
-            /*
-            setTimeout(() => {
-                placeholder.style.display = 'none';
-                avatarContainer.innerHTML = '<img src="https://cdn.discordapp.com/attachments/1000000000000000000/1000000000000000000/avatar.png" alt="Asaf - Avatar Discord">';
-            }, 3000);
-            */
         });
         
         // Efeito de rolagem suave para as seções
