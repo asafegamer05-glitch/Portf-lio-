@@ -1,114 +1,661 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio - asafgamer_123</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #121212;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #1abc9c;
-      padding: 20px;
-      text-align: center;
-      position: relative;
-    }
-    header img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      border: 3px solid #fff;
-      margin-bottom: 10px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    header p {
-      margin: 5px 0 0;
-      font-size: 1.2em;
-    }
-    .socials {
-      margin-top: 10px;
-    }
-    .socials a {
-      margin-right: 20px;
-      color: #fff;
-      text-decoration: none;
-    }
-    .socials a:hover {
-      text-decoration: underline;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      color: #1abc9c;
-      border-bottom: 2px solid #1abc9c;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-    .card {
-      background-color: #1e1e1e;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 20px 0;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-    .card h3 {
-      margin-top: 0;
-      color: #f39c12;
-    }
-    .card p {
-      margin: 10px 0 0;
-    }
-    /* Easter egg */
-    .easter-egg {
-      text-align: center;
-      font-size: 1.2em;
-      color: rgba(255, 255, 255, 0.05);
-      margin: 50px 0;
-      user-select: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Dev | Asaf - Bots Discord & Jogos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00eeff;
+            --secondary: #ff00cc;
+            --dark: #0a0a16;
+            --dark-light: #151525;
+            --text: #f0f0f0;
+            --text-secondary: #b0b0ff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header e Perfil Discord */
+        header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+            padding: 40px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 238, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 204, 0.1) 0%, transparent 50%);
+            z-index: 0;
+        }
+        
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .discord-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid var(--primary);
+            box-shadow: 
+                0 0 25px var(--primary),
+                inset 0 0 20px rgba(0, 238, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: pulse-avatar 4s infinite alternate;
+        }
+        
+        .discord-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile-info h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(0, 238, 255, 0.5);
+        }
+        
+        .profile-info .tagline {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        
+        .discord-id {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(0, 238, 255, 0.3);
+            margin-top: 10px;
+        }
+        
+        .discord-id i {
+            color: #7289da;
+            font-size: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon.discord {
+            background-color: #5865F2;
+        }
+        
+        .social-icon.instagram {
+            background: linear-gradient(45deg, #405DE6, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #FFDC80);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Seções gerais */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+        
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .skill-card {
+            background: rgba(21, 21, 37, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(0, 238, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 238, 255, 0.1), transparent);
+            transition: left 0.7s ease;
+        }
+        
+        .skill-card:hover::before {
+            left: 100%;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(0, 238, 255, 0.2);
+        }
+        
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .skill-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+        
+        /* Projetos */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .project-card {
+            background: rgba(21, 21, 37, 0.7);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 238, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--secondary);
+            box-shadow: 0 20px 40px rgba(255, 0, 204, 0.2);
+        }
+        
+        .project-header {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(0, 238, 255, 0.1);
+        }
+        
+        .project-header h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+        }
+        
+        .project-body {
+            padding: 20px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .project-tag {
+            background: rgba(0, 238, 255, 0.1);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-light);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(0, 238, 255, 0.1);
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 0, 204, 0.4);
+        }
+        
+        /* Animações */
+        @keyframes pulse-avatar {
+            0% {
+                box-shadow: 
+                    0 0 25px var(--primary),
+                    inset 0 0 20px rgba(0, 238, 255, 0.3);
+            }
+            100% {
+                box-shadow: 
+                    0 0 35px var(--primary),
+                    0 0 45px rgba(0, 238, 255, 0.4),
+                    inset 0 0 25px rgba(0, 238, 255, 0.4);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-info h1 {
+                font-size: 2.5rem;
+            }
+            
+            .social-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .skills-container, .projects-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Efeitos de partículas */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .particle {
+            position: absolute;
+            background-color: var(--primary);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+    </style>
 </head>
 <body>
-
-<header>
-  <img src="https://cdn.discordapp.com/avatars/1257311678891163722/<HASH_DO_AVATAR>.png" alt="Meu Avatar">
-  <h1>@asafgamer_123</h1>
-  <p>Desenvolvedor de bots, jogos e muito mais!</p>
-  <div class="socials">
-    <a href="https://www.instagram.com/asafgamery" target="_blank">Instagram</a>
-    <a href="https://discord.com/users/1257311678891163722" target="_blank">Discord</a>
-  </div>
-</header>
-
-<section>
-  <h2>Sobre Mim</h2>
-  <div class="card">
-    <p>Oi! Eu sou o Asaf, tenho alguns trilhoes de anos e adoro criar coisas incríveis. Sei programar em BDFD avançado, Lua básico, um pouco de HTML e Python. Também faço bots em AOI.js e tenho uma cloud própria para bots.</p>
-  </div>
-
-  <h2>Experiências</h2>
-  <div class="card">
-    <h3>Jogos</h3>
-    <p>Já criei jogos no Roblox e no Pocket Code, incluindo projetos com mecânicas complexas.</p>
-    <h3>Speedrun</h3>
-    <p>Bati recorde mundial de speedrun no jogo "Doors but Sheap and Shorter".</p>
-    <h3>Bots</h3>
-    <p>Crio bots em BDFD e AOI.js, possuo uma cloud de bots e desenvolvo funcionalidades avançadas.</p>
-  </div>
-</section>
-
-<div class="easter-egg">skibidi sigma 🗿</div>
-
+    <!-- Header com foto do Discord -->
+    <header>
+        <div class="particles" id="particles"></div>
+        <div class="container">
+            <div class="profile-container">
+                <div class="discord-avatar floating">
+                    <img src="https://cdn.discordapp.com/avatars/1257311678891163722/a_cb5e7fffa3c5c9653d9b2d5e8a5b4e0a.webp?size=256" alt="Asaf - Avatar Discord">
+                </div>
+                <div class="profile-info">
+                    <h1>Asaf</h1>
+                    <p class="tagline">Desenvolvedor de Bots Discord & Jogos • Editor de Vídeo</p>
+                    
+                    <div class="discord-id">
+                        <i class="fab fa-discord"></i>
+                        <span>ID do Discord: 1257311678891163722</span>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://discord.com/users/1257311678891163722" target="_blank" class="social-icon discord">
+                            <i class="fab fa-discord"></i>
+                            <span>Perfil do Discord</span>
+                        </a>
+                        <a href="https://instagram.com/asafgamery" target="_blank" class="social-icon instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span>@asafgamery</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Seção Sobre -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="skill-card" style="max-width: 800px; margin: 0 auto;">
+                <p>Sou um desenvolvedor especializado em criar bots para Discord e desenvolver jogos, utilizando diversas tecnologias como aoi.js, discord.js, HTML, Python, JavaScript, Lua e outras. Também atuo como editor de vídeo, combinando habilidades técnicas com criatividade para produzir conteúdo dinâmico e envolvente.</p>
+                <p>Minha paixão é criar experiências interativas e funcionais, seja através de bots automatizados para comunidades ou jogos imersivos. Estou constantemente aprendendo novas tecnologias e aprimorando minhas habilidades para enfrentar desafios complexos.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Habilidades -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Habilidades & Tecnologias</h2>
+            <div class="skills-container">
+                <!-- Bots Discord -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Bots Discord</h3>
+                    <p>Desenvolvimento de bots avançados para Discord usando aoi.js e discord.js com sistemas de moderação, economia, música e muito mais.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">aoi.js</span>
+                        <span class="project-tag">discord.js</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">Node.js</span>
+                    </div>
+                </div>
+                
+                <!-- Desenvolvimento de Jogos -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Desenvolvimento de Jogos</h3>
+                    <p>Criação de jogos usando múltiplas tecnologias, desde scripts Lua para plataformas como Roblox até jogos com Python e JavaScript.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Lua</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">Game Design</span>
+                    </div>
+                </div>
+                
+                <!-- Web Development -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Desenvolvimento de aplicações web modernas com HTML, CSS, JavaScript e integração com APIs.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML/CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">APIs</span>
+                        <span class="project-tag">Frontend</span>
+                    </div>
+                </div>
+                
+                <!-- Edição de Vídeo -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Edição de Vídeo</h3>
+                    <p>Criação e edição de conteúdo audiovisual para streams, jogos e redes sociais com efeitos visuais e transições dinâmicas.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Adobe Premiere</span>
+                        <span class="project-tag">After Effects</span>
+                        <span class="project-tag">DaVinci Resolve</span>
+                        <span class="project-tag">Motion Graphics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Projetos -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projetos Destacados</h2>
+            <div class="projects-container">
+                <!-- Projeto 1 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Bot Discord Multifuncional</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Bot completo para Discord com sistemas de moderação, economia, rank, música e tickets. Desenvolvido com aoi.js e discord.js.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">aoi.js</span>
+                            <span class="project-tag">discord.js</span>
+                            <span class="project-tag">MongoDB</span>
+                            <span class="project-tag">API Integration</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Jogo em Lua - Plataforma</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Jogo de plataforma desenvolvido em Lua com sistema de física personalizado, inimigos inteligentes e múltiplas fases.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Lua</span>
+                            <span class="project-tag">Love2D</span>
+                            <span class="project-tag">Game Design</span>
+                            <span class="project-tag">Physics Engine</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Sistema Web para Comunidades</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Dashboard web para gerenciamento de bots Discord com painel administrativo, estatísticas e configurações em tempo real.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML/CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">WebSocket</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 4 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Pacote de Edição para Streamers</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Coleção de overlays, alerts e transições personalizadas para streamers, criados com After Effects e implementados em OBS.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">After Effects</span>
+                            <span class="project-tag">Motion Graphics</span>
+                            <span class="project-tag">OBS</span>
+                            <span class="project-tag">Visual Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Vamos trabalhar juntos?</h3>
+                <p>Entre em contato para discutir seu projeto de bot Discord, jogo ou edição de vídeo!</p>
+                <div class="social-links" style="justify-content: center; margin: 30px 0;">
+                    <a href="https://discord.com/users/1257311678891163722" target="_blank" class="social-icon discord">
+                        <i class="fab fa-discord"></i>
+                        <span>Discord</span>
+                    </a>
+                    <a href="https://instagram.com/asafgamery" target="_blank" class="social-icon instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+                <p style="margin-top: 30px; color: var(--text-secondary);">© 2023 Asaf - Desenvolvedor & Editor de Vídeo</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Efeito de partículas
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Tamanho aleatório
+                const size = Math.random() * 5 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Posição aleatória
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Cor aleatória
+                const colors = ['#00eeff', '#ff00cc', '#ffffff'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.backgroundColor = color;
+                
+                // Animação
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 5;
+                particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+                
+                particlesContainer.appendChild(particle);
+            }
+            
+            // Efeito de digitação no título
+            const title = document.querySelector('.profile-info h1');
+            const originalText = title.textContent;
+            title.textContent = '';
+            
+            let i = 0;
+            function typeWriter() {
+                if (i < originalText.length) {
+                    title.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            
+            // Iniciar efeito de digitação após um breve delay
+            setTimeout(typeWriter, 500);
+        });
+        
+        // Efeito de rolagem suave para as seções
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
